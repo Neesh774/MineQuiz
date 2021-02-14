@@ -8,6 +8,7 @@ import 'dart:io';
 class SelectorWidget extends StatefulWidget{
   @override
   _SelectorWidgetState createState() => _SelectorWidgetState();
+  
 }
 
 class _SelectorWidgetState extends State<SelectorWidget>{
@@ -15,14 +16,24 @@ class _SelectorWidgetState extends State<SelectorWidget>{
   
   @override
   Widget build(BuildContext context){
-    return Column(
+    return MaterialApp(
+      title: "Home Page",
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+      appBar: AppBar(title: Image.asset('assets/minequiz.png', scale: 0.3)),
+      body: Container(
+      color: Color(0xffc7c7c7),
+      child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Gap(40),
-        Container(alignment: Alignment.center, child: Text("Featured Recipe", style:TextStyle(fontFamily: 'Minecrafter', fontSize: 30.0),)),
+        Container(alignment: Alignment.center, child: Text("Featured Recipe", style:TextStyle(fontFamily: 'Minecrafter', fontSize: 30.0, color: Color(0xff373737)),)),
         Container(alignment: Alignment.center,child: Image.asset("assets/images/craft_arrow.png"))
         
       ],
+    )
+    )
+    )
     );
   }
 }
